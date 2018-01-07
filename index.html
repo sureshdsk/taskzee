@@ -11,7 +11,7 @@
     <link rel="icon" type="image/vnd.microsoft.icon" sizes="32x32" href="favicon.ico">
 
     <title>TaskZee - Stay Focussed!</title>
-
+    <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/ehkioebimmkllmhdapjbbdncalnmggnk">
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -61,7 +61,7 @@
               TaskZee is a Chrome plug-in that shows you your to-do items every time you open a new tab. This helps you focus on the tasks that needs your attention and avoid distractions like habitually opening Facebook or YouTube to watch yet another cat video.
 
             </p>
-            <a class="btn btn-primary btn-xl js-scroll-trigger" href="">Find Out More</a>
+            <button onclick="chrome.webstore.install()" id="install-button" class="btn btn-primary btn-xl js-scroll-trigger">Add to Chrome</button>
           </div>
         </div>
       </div>
@@ -99,6 +99,11 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/creative.min.js"></script>
+    <script>
+    if (chrome.app.isInstalled) {
+      document.getElementById('install-button').style.display = 'none';
+    }
+    </script>
 
   </body>
 
